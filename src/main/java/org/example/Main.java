@@ -7,14 +7,14 @@ public class Main {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    double number1 = 0;
-    double number2 = 0;
+    double firstInput = 0;
+    double secondInput = 0;
 
     // 1番目の数字を入力
     // 数字以外を入力したらエラーを返す
     System.out.print("1番目の数字を入力してください: ");
     try {
-      number1 = scanner.nextDouble();
+      firstInput = scanner.nextDouble();
     } catch (InputMismatchException e) {
       System.out.println("エラー: 数字を入力してください");
       return;
@@ -35,7 +35,7 @@ public class Main {
     // 数字以外を入力したらエラーを返す
     System.out.print("2番目の数字を入力してください: ");
     try {
-      number2 = scanner.nextDouble();
+      secondInput = scanner.nextDouble();
     } catch (InputMismatchException e) {
       System.out.println("エラー: 数字を入力してください");
       return;
@@ -43,11 +43,11 @@ public class Main {
 
     // calculateメソッドの呼び出し
     Calculator calculator = new Calculator();
-    double result = calculator.calculate(number1, operator, number2);
+    double result = calculator.calculate(firstInput, operator, secondInput);
 
     // 結果の表示
     if (!Double.isNaN(result)) {
-      System.out.println("計算結果: " + number1 + " " + operator + " " + number2 + " = " + result);
+      System.out.println("計算結果: " + firstInput + " " + operator + " " + secondInput + " = " + result);
     }
   }
 }
